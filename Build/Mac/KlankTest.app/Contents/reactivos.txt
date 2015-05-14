@@ -1,0 +1,15 @@
+#The man___aan het schrijven
+%heeft
+$ligt
+&is
+</reactivo>
+#Ik eet________'s morgens
+%drink
+$maaltijd
+&ontbijt
+</reactivo>
+#De man heeft________benen
+%toe
+$vier
+&twee
+</reactivo>
