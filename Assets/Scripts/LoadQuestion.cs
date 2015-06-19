@@ -14,6 +14,7 @@ public class LoadQuestion : MonoBehaviour {
     public Text a2Text;
     public Text a3Text;
     public Text feedback;
+    public OptionMixer mixer;
 
     private int questionIndex;
 
@@ -85,7 +86,7 @@ public class LoadQuestion : MonoBehaviour {
 
     public void loadFirstQuestion()
     {
-
+        mixer.arrangeOptions();
         questionText.text = questions[0].statement;
         a1Text.text = questions[0].wrongOne;
         a2Text.text = questions[0].wrongTwo;
@@ -97,6 +98,7 @@ public class LoadQuestion : MonoBehaviour {
     {
 
         //Sanity Check, let's see if this is the last question
+        mixer.arrangeOptions();
         if (index == questions.Length - 1)
         {
             Debug.Log("This is the last question");
