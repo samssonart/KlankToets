@@ -13,3 +13,8 @@ $maaltijd
 $vier
 &twee
 </reactivo>
+#Mijn vriend is______belg
+%de
+$het
+&een
+</reactivo>

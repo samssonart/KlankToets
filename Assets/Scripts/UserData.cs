@@ -7,17 +7,18 @@ public class UserData : MonoBehaviour {
     public InputField nameField;
     public InputField emailField;
     public GameLogic gl;
+    public CanvasGroup backdrop;
 
     void Start()
     {
 
         gl = GameObject.FindObjectOfType<GameLogic>();
+        backdrop.alpha = 0f;
 
     }
 
 	
-	// Update is called once per frame
-	public void validate () {
+	 public void validate () {
 
         bool fieldsOkay = false;
 
@@ -29,8 +30,20 @@ public class UserData : MonoBehaviour {
             gl.setUserData(nameField.text, emailField.text);
             gl.changeState("Test");
             Debug.Log("State changed");
-
+            Application.LoadLevel(1);
+        }
+        else
+        {
+            backdrop.alpha = 1f;
+            StartCoroutine(waitForGUI());
         }
 	
 	}
+
+     IEnumerator waitForGUI()
+     {
+         yield return new WaitForSeconds(3);
+         backdrop.alpha = 0f;
+
+     }
 }
