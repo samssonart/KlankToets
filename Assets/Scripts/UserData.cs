@@ -8,6 +8,7 @@ public class UserData : MonoBehaviour {
     public InputField emailField;
     public GameLogic gl;
     public CanvasGroup backdrop;
+    public Vector3 awayPos = new Vector3(541f, -350f, 0);
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class UserData : MonoBehaviour {
         else
         {
             backdrop.alpha = 1f;
+            backdrop.GetComponent<RectTransform>().localPosition = Vector3.zero;
             StartCoroutine(waitForGUI());
         }
 	
@@ -44,6 +46,7 @@ public class UserData : MonoBehaviour {
      {
          yield return new WaitForSeconds(3);
          backdrop.alpha = 0f;
+         backdrop.transform.position = awayPos;
 
      }
 }
